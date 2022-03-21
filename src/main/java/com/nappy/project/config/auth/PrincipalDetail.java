@@ -41,6 +41,8 @@ public class PrincipalDetail implements UserDetails, OAuth2User {
         return collection;
     }
 
+
+
     //사용자 패스워드
     @Override
     public String getPassword() {
@@ -62,6 +64,8 @@ public class PrincipalDetail implements UserDetails, OAuth2User {
     public String getNickname() {
         return user.getNickname();
     }
+
+
 
     //사용자 pk
     public Long getId() {

@@ -1,5 +1,6 @@
 package com.nappy.project.domain.board;
 
+import org.hibernate.annotations.Formula;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,6 +11,7 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 
     @Modifying
     @Query("update Board p set p.count = p.count + 1 where p.id = :id")
+    @Formula("(select count(1) from board")
     int updateCount(Long id);
 
     Page<Board> findByTitleContainingOrContentContaining(String title, String content, Pageable pageable);

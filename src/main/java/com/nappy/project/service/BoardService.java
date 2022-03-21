@@ -27,6 +27,7 @@ public class BoardService {
         return boardRepository.save(boardSaveRequestDto.toEntity()).getId();
     }
 
+
     /**
      * 글목록 로직
      */

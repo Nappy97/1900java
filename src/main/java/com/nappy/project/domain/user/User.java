@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Entity
 public class User extends BaseTimeEntity {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; //sequence, auto_increment
@@ -31,6 +32,7 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false, length = 20)
     private String nickname;
 
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
@@ -41,12 +43,11 @@ public class User extends BaseTimeEntity {
     @Column
     private String providerId;
 
-
-
     /**
      * 비밀번호 암호화 메소드
      */
     public void setPassword(String password) {
+
         this.password = password;
     }
 
@@ -69,5 +70,7 @@ public class User extends BaseTimeEntity {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 }
 
